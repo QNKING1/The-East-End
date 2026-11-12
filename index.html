@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Discover The East End, Clifton, Karachi — an intimate fine-dining journey through Bohra, Gujarati, Sindhi and Pakistani heritage. Reserve your table for our five-course tasting experience.">
+  <title>The East End | Heritage, Served with Intention</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#11110f",
+            panel: "#191916",
+            gold: "#d8b46b",
+            cream: "#f5f0e5",
+            muted: "#a6a195"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "Georgia", "serif"],
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          },
+          boxShadow: {
+            glow: "0 0 34px rgba(216, 180, 107, .22)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: dark; scroll-behavior: smooth; }
+    body { background: #11110f; color: #f5f0e5; }
+    ::selection { background: rgba(216,180,107,.35); color: #fff; }
+    .hero-image { background-image: linear-gradient(90deg, rgba(13,13,12,.94) 0%, rgba(13,13,12,.78) 44%, rgba(13,13,12,.32) 100%), linear-gradient(0deg, #11110f 0%, transparent 36%), url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=88"); }
+    .grain { background-image: radial-gradient(rgba(255,255,255,.07) .55px, transparent .55px); background-size: 7px 7px; }
+    .gold-rule { background: linear-gradient(90deg, #d8b46b, rgba(216,180,107,0)); }
+    .nav-glass { background: rgba(17,17,15,.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .menu-card img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .menu-card:hover img { transform: scale(1.055); }
+    .whatsapp-pulse { animation: pulse-ring 2.2s ease-out infinite; }
+    @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.45); } 70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+    .fade-up { animation: fade-up .8s both; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-gold focus:px-4 focus:py-3 focus:text-ink">Skip to content</a>
+
+  <header class="nav-glass fixed inset-x-0 top-0 z-50 border-b border-white/10">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="group flex items-center gap-3" aria-label="The East End home">
+        <span class="grid h-10 w-10 place-items-center rounded-full border border-gold/60 text-gold"><i class="fa-solid fa-utensils text-sm" aria-hidden="true"></i></span>
+        <span class="font-display text-xl tracking-wide text-cream sm:text-2xl">The East <span class="text-gold">End</span></span>
+      </a>
+      <div class="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[.15em] text-cream/75 lg:flex">
+        <a class="transition hover:text-gold" href="#story">About</a>
+        <a class="transition hover:text-gold" href="#experience">Experience</a>
+        <a class="transition hover:text-gold" href="#menu">Menu</a>
+        <a class="transition hover:text-gold" href="#reviews">Reviews</a>
+        <a class="transition hover:text-gold" href="#location">Location</a>
+        <a class="transition hover:text-gold" href="#contact">Contact</a>
+      </div>
+      <a href="#reservation" class="hidden rounded-full bg-gradient-to-r from-[#c59a4d] to-[#e6ca8b] px-5 py-3 text-xs font-bold uppercase tracking-[.13em] text-ink shadow-glow transition hover:-translate-y-0.5 sm:inline-flex">Book a Table <i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i></a>
+      <button id="menuToggle" class="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-cream lg:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink/95 px-5 pb-6 pt-3 lg:hidden">
+      <div class="mx-auto grid max-w-7xl gap-1">
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#story">About</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#experience">Experience</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#menu">Menu</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#reviews">Reviews</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#location">Location</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm text-cream/80 hover:bg-white/5 hover:text-gold" href="#contact">Contact</a>
+        <a class="mobile-link mt-2 rounded-full bg-gold px-5 py-3 text-center text-sm font-bold text-ink" href="#reservation">Book a Table</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero-image relative flex min-h-[760px] items-center bg-cover bg-center pt-24 sm:min-h-[820px]">
+      <div class="grain absolute inset-0 opacity-[.08]" aria-hidden="true"></div>
+      <div class="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-24 lg:grid-cols-[1.12fr_.88fr] lg:px-8 lg:py-28">
+        <div class="fade-up max-w-3xl">
+          <div class="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.24em] text-gold sm:text-sm"><span class="h-px w-10 bg-gold"></span> Karachi's Exclusive Fine Dining Experience</div>
+          <h1 class="font-display text-5xl leading-[1.08] tracking-[-.035em] text-cream sm:text-6xl lg:text-7xl xl:text-[5.5rem]">A taste of heritage,<br><span class="italic text-gold">beautifully reimagined.</span></h1>
+          <p class="mt-7 max-w-xl text-base leading-8 text-cream/70 sm:text-lg">Experience authentic Bohra and Pakistani fusion fine dining. A thoughtful five-course journey through treasured recipes, tucked behind Eid Ghaa in Clifton.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#reservation" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#c59a4d] to-[#e7ca8a] px-7 py-4 text-sm font-bold tracking-wide text-ink shadow-glow transition hover:-translate-y-1">Reserve a Table <i class="fa-solid fa-arrow-right ml-3" aria-hidden="true"></i></a>
+            <a href="#menu" class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/[.04] px-7 py-4 text-sm font-semibold text-cream backdrop-blur transition hover:border-gold/70 hover:bg-white/[.08]">Explore Signature Menu</a>
+          </div>
+          <div class="mt-12 flex items-center gap-4 border-t border-white/15 pt-6">
+            <div class="flex text-sm text-gold" aria-label="Rated 4.3 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i></div>
+            <p class="text-sm text-cream/70"><strong class="text-cream">4.3 / 5</strong> · 1,206 guest reviews</p>
+          </div>
+        </div>
+        <div class="hidden justify-self-end lg:block">
+          <div class="relative w-72 rounded-t-full border border-gold/40 p-3">
+            <img class="h-[390px] w-full rounded-t-full object-cover" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Warmly lit fine-dining restaurant interior" fetchpriority="high">
+            <div class="absolute -bottom-5 -left-20 max-w-[250px] rounded-2xl border border-white/10 bg-ink/85 p-5 shadow-2xl backdrop-blur">
+              <span class="text-[10px] font-bold uppercase tracking-[.22em] text-gold">An evening to savour</span>
+              <p class="mt-2 font-display text-xl leading-snug text-cream">Five courses.<br>Many generations.</p>
+            </div>
+            <div class="absolute -right-7 top-16 grid h-20 w-20 place-items-center rounded-full border border-gold/50 bg-ink/80 text-center backdrop-blur">
+              <span class="font-display text-2xl leading-none text-gold">5<small class="block pt-1 font-sans text-[8px] uppercase tracking-[.18em] text-cream">courses</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#story" class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[9px] uppercase tracking-[.28em] text-cream/50 sm:flex">Discover <i class="fa-solid fa-arrow-down text-gold" aria-hidden="true"></i></a>
+    </section>
+
+    <section id="story" class="relative overflow-hidden py-24 sm:py-32">
+      <div class="absolute -left-40 top-28 h-96 w-96 rounded-full bg-gold/[.04] blur-3xl" aria-hidden="true"></div>
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-8">
+        <div class="relative mx-auto w-full max-w-lg">
+          <div class="absolute -left-4 -top-4 h-3/4 w-3/4 border border-gold/40 sm:-left-7 sm:-top-7"></div>
+          <img class="relative h-[430px] w-full object-cover sm:h-[540px]" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=85" alt="A carefully arranged dining table ready for an intimate meal" loading="lazy">
+          <div class="absolute -bottom-8 right-0 max-w-[240px] border border-white/10 bg-panel p-5 sm:-right-8">
+            <p class="font-display text-3xl text-gold">Since day one</p>
+            <p class="mt-2 text-xs leading-5 text-cream/60">Rooted in the flavours and generous spirit of home.</p>
+          </div>
+        </div>
+        <div class="pt-6 lg:pt-0">
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-gold">Our story &amp; heritage</p>
+          <h2 class="mt-5 font-display text-4xl leading-tight text-cream sm:text-5xl">Tradition at heart.<br><span class="italic text-gold">A little unexpected.</span></h2>
+          <div class="gold-rule mt-7 h-px w-24"></div>
+          <p class="mt-7 text-sm leading-8 text-cream/65 sm:text-base">The East End is a celebration of the flavours we grew up with and the stories behind them. Our five-course tasting menu brings Bohra, Gujarati and Sindhi traditions together with the warmth of Pakistani hospitality—honouring every recipe while giving each plate room to surprise.</p>
+          <p class="mt-4 text-sm leading-8 text-cream/65 sm:text-base">Settle in, take your time, and let the evening unfold one thoughtful course at a time.</p>
+          <a href="#experience" class="mt-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-gold transition hover:text-cream">Discover the experience <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="border-y border-white/[.07] bg-[#151512] py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-gold">More than a meal</p>
+          <h2 class="mt-4 font-display text-4xl text-cream sm:text-5xl">Made for lingering</h2>
+          <p class="mt-4 text-sm leading-7 text-cream/60">A relaxed, intimate setting for the moments worth sharing.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+          <article class="border border-white/10 bg-ink/50 p-5 text-center sm:p-7"><i class="fa-solid fa-heart text-2xl text-gold" aria-hidden="true"></i><h3 class="mt-4 font-display text-lg text-cream">Cozy &amp; Romantic</h3><p class="mt-2 text-xs leading-5 text-cream/55">A softly lit setting for a special evening.</p></article>
+          <article class="border border-white/10 bg-ink/50 p-5 text-center sm:p-7"><i class="fa-solid fa-door-closed text-2xl text-gold" aria-hidden="true"></i><h3 class="mt-4 font-display text-lg text-cream">Private Dining</h3><p class="mt-2 text-xs leading-5 text-cream/55">A more personal gathering for your group.</p></article>
+          <article class="border border-white/10 bg-ink/50 p-5 text-center sm:p-7"><i class="fa-solid fa-leaf text-2xl text-gold" aria-hidden="true"></i><h3 class="mt-4 font-display text-lg text-cream">Outdoor Seating</h3><p class="mt-2 text-xs leading-5 text-cream/55">Enjoy Karachi evenings in the open air.</p></article>
+          <article class="border border-white/10 bg-ink/50 p-5 text-center sm:p-7"><i class="fa-solid fa-mug-hot text-2xl text-gold" aria-hidden="true"></i><h3 class="mt-4 font-display text-lg text-cream">Tea &amp; Desserts</h3><p class="mt-2 text-xs leading-5 text-cream/55">Save room for a sweet, unhurried finish.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.25em] text-gold">A few guest favourites</p>
+            <h2 class="mt-4 font-display text-4xl text-cream sm:text-5xl">From our kitchen</h2>
+          </div>
+          <p class="max-w-md text-sm leading-7 text-cream/60">Each plate is a small chapter in a bigger story. Ask our team about today's tasting menu and seasonal dishes.</p>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filter menu dishes">
+          <button class="menu-filter rounded-full border border-gold bg-gold px-5 py-2.5 text-xs font-bold text-ink" data-filter="all" aria-pressed="true">All favourites</button>
+          <button class="menu-filter rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold text-cream/65 transition hover:border-gold/50 hover:text-gold" data-filter="starters" aria-pressed="false">Starters</button>
+          <button class="menu-filter rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold text-cream/65 transition hover:border-gold/50 hover:text-gold" data-filter="mains" aria-pressed="false">Mains</button>
+          <button class="menu-filter rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold text-cream/65 transition hover:border-gold/50 hover:text-gold" data-filter="desserts" aria-pressed="false">Desserts</button>
+        </div>
+        <div id="menuCards" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="menu-card group overflow-hidden border border-white/10 bg-panel transition duration-300 hover:-translate-y-2 hover:border-gold/40" data-category="starters">
+            <div class="relative h-56 overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=850&q=82" alt="Colourful stuffed pepper and savoury starter platter" loading="lazy"><span class="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-[9px] font-bold uppercase tracking-[.13em] text-ink">Guest favourite</span></div>
+            <div class="p-5"><p class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Starter · Bohra classic</p><h3 class="mt-2 font-display text-xl text-cream">Ghaatiya Papri &amp; Stuffed Peppers</h3><p class="mt-3 text-xs leading-6 text-cream/55">Crisp, savoury bites with a bright, flavourful filling to start the journey.</p><div class="mt-5 border-t border-white/10 pt-4 text-xs text-cream/50">Tasting menu from <span class="font-semibold text-gold">Rs. 2,000</span></div></div>
+          </article>
+          <article class="menu-card group overflow-hidden border border-white/10 bg-panel transition duration-300 hover:-translate-y-2 hover:border-gold/40" data-category="mains">
+            <div class="relative h-56 overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=850&q=82" alt="Rich, warmly spiced chicken curry served with herbs" loading="lazy"></div>
+            <div class="p-5"><p class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Main · From the tawa</p><h3 class="mt-2 font-display text-xl text-cream">Tawa Chicken &amp; Masala Raan</h3><p class="mt-3 text-xs leading-6 text-cream/55">Comforting spices, patient cooking and generous heritage in every serving.</p><div class="mt-5 border-t border-white/10 pt-4 text-xs text-cream/50">A taste of the <span class="font-semibold text-gold">signature menu</span></div></div>
+          </article>
+          <article class="menu-card group overflow-hidden border border-white/10 bg-panel transition duration-300 hover:-translate-y-2 hover:border-gold/40" data-category="mains">
+            <div class="relative h-56 overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=850&q=82" alt="Fragrant biryani rice with spices and fresh herbs" loading="lazy"></div>
+            <div class="p-5"><p class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Main · A much-loved classic</p><h3 class="mt-2 font-display text-xl text-cream">Prawn Biryani &amp; Fusion Delicacies</h3><p class="mt-3 text-xs leading-6 text-cream/55">A fragrant celebration of spice, coastal flavour and slow-cooked rice.</p><div class="mt-5 border-t border-white/10 pt-4 text-xs text-cream/50">Dinner service from <span class="font-semibold text-gold">6:30 PM</span></div></div>
+          </article>
+          <article class="menu-card group overflow-hidden border border-white/10 bg-panel transition duration-300 hover:-translate-y-2 hover:border-gold/40" data-category="desserts">
+            <div class="relative h-56 overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1501446529957-6226bd447c46?auto=format&fit=crop&w=850&q=82" alt="Traditional kulfi-inspired ice cream dessert" loading="lazy"></div>
+            <div class="p-5"><p class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Dessert · A sweet ending</p><h3 class="mt-2 font-display text-xl text-cream">Special Kulfi &amp; Traditional Desserts</h3><p class="mt-3 text-xs leading-6 text-cream/55">A nostalgic, chilled finale with the sweetness of tradition.</p><div class="mt-5 border-t border-white/10 pt-4 text-xs text-cream/50">Don't leave without <span class="font-semibold text-gold">something sweet</span></div></div>
+          </article>
+        </div>
+        <p class="mt-7 text-center text-[11px] leading-5 text-cream/40">Menu selections and prices may vary. Please call us for the current tasting menu and availability.</p>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden border-y border-white/[.07] bg-[#171713] py-20 sm:py-24">
+      <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 50% 100%, rgba(216,180,107,.22), transparent 60%)" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-4xl px-5 text-center">
+        <i class="fa-solid fa-quote-left text-2xl text-gold/70" aria-hidden="true"></i>
+        <p class="mx-auto mt-6 max-w-3xl font-display text-3xl leading-relaxed text-cream sm:text-4xl">“A delicacy experience for special taste buds.”</p>
+        <p class="mt-6 text-xs font-bold uppercase tracking-[.18em] text-gold">A note from our guests</p>
+      </div>
+    </section>
+
+    <section id="reviews" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div><p class="text-xs font-bold uppercase tracking-[.25em] text-gold">Kind words, shared</p><h2 class="mt-4 font-display text-4xl text-cream sm:text-5xl">Our guests say it best</h2></div>
+          <div class="flex items-center gap-4 border border-white/10 bg-panel px-5 py-4">
+            <span class="font-display text-4xl text-gold">4.3</span>
+            <div><div class="flex gap-1 text-xs text-gold" aria-label="4.3 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i></div><p class="mt-1 text-[10px] text-cream/55">Based on 1,206 reviews</p></div>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="flex flex-col border border-white/10 bg-panel p-6 sm:p-7"><div class="flex gap-1 text-xs text-gold" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><blockquote class="mt-5 flex-1 text-sm leading-7 text-cream/75">“Authentic east taste. A bit towards high cost end... though worth a shot. A delicacy experience for special taste buds.”</blockquote><div class="mt-7 border-t border-white/10 pt-5"><p class="font-semibold text-cream">Moeen Aftab Shah</p><p class="mt-1 text-[10px] uppercase tracking-[.15em] text-gold">Local Guide</p></div></article>
+          <article class="flex flex-col border border-white/10 bg-panel p-6 sm:p-7"><div class="flex gap-1 text-xs text-gold" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><blockquote class="mt-5 flex-1 text-sm leading-7 text-cream/75">“One of the few Bohra food restaurants in Karachi. The main courses are great and the presentation is amazing.”</blockquote><div class="mt-7 border-t border-white/10 pt-5"><p class="font-semibold text-cream">Mohammed Khanani</p><p class="mt-1 text-[10px] uppercase tracking-[.15em] text-gold">Guest review</p></div></article>
+          <article class="flex flex-col border border-white/10 bg-panel p-6 sm:p-7"><div class="flex gap-1 text-xs text-gold" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><blockquote class="mt-5 flex-1 text-sm leading-7 text-cream/75">“Had a lovely experience here. Everything from starters to desserts was delicious.”</blockquote><div class="mt-7 border-t border-white/10 pt-5"><p class="font-semibold text-cream">Nida Kirmani</p><p class="mt-1 text-[10px] uppercase tracking-[.15em] text-gold">Guest review</p></div></article>
+        </div>
+        <p class="mt-5 text-[10px] text-cream/40">Guest comments and rating are presented as shared by visitors in the supplied restaurant information.</p>
+      </div>
+    </section>
+
+    <section id="reservation" class="border-y border-white/[.07] bg-[#171713] py-24 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-20 lg:px-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-gold">Your table is waiting</p>
+          <h2 class="mt-4 font-display text-4xl leading-tight text-cream sm:text-5xl">Make an evening<br><span class="italic text-gold">of it.</span></h2>
+          <p class="mt-6 max-w-md text-sm leading-7 text-cream/60">Send us a reservation request and our team will call you to confirm. For same-day bookings, please call us directly.</p>
+          <a href="tel:+923212468246" class="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-cream transition hover:text-gold"><span class="grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold"><i class="fa-solid fa-phone" aria-hidden="true"></i></span> +92 321 2468246</a>
+          <p class="mt-7 text-xs text-cream/45"><i class="fa-regular fa-clock mr-2 text-gold" aria-hidden="true"></i>Dinner service · Daily from 6:30 PM</p>
+        </div>
+        <form id="reservationForm" class="border border-white/10 bg-ink p-6 shadow-2xl sm:p-9" novalidate>
+          <div class="mb-7 flex items-center justify-between gap-4">
+            <div><p class="font-display text-2xl text-cream">Request a reservation</p><p class="mt-1 text-xs text-cream/45">We’ll be in touch to confirm your table.</p></div>
+            <span class="hidden h-12 w-12 place-items-center rounded-full border border-gold/30 text-gold sm:grid"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Full name <span class="text-gold">*</span></span><input name="name" autocomplete="name" maxlength="80" required class="reservation-field w-full border border-white/15 bg-white/[.03] px-4 py-3.5 text-sm text-cream outline-none transition placeholder:text-cream/30 focus:border-gold/70" placeholder="Your name"></label>
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Phone number <span class="text-gold">*</span></span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="16" pattern="(?:\+92|0)3[0-9]{9}" required class="reservation-field w-full border border-white/15 bg-white/[.03] px-4 py-3.5 text-sm text-cream outline-none transition placeholder:text-cream/30 focus:border-gold/70" placeholder="+92 3XX XXXXXXX"></label>
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Date <span class="text-gold">*</span></span><input name="date" type="date" required class="reservation-field w-full border border-white/15 bg-white/[.03] px-4 py-3.5 text-sm text-cream outline-none transition focus:border-gold/70"></label>
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Preferred time <span class="text-gold">*</span></span><select name="time" required class="reservation-field w-full border border-white/15 bg-[#191916] px-4 py-3.5 text-sm text-cream outline-none transition focus:border-gold/70"><option value="">Select a time</option><option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option><option>8:30 PM</option><option>9:00 PM</option><option>9:30 PM</option><option>10:00 PM</option></select></label>
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Guests <span class="text-gold">*</span></span><select name="guests" required class="reservation-field w-full border border-white/15 bg-[#191916] px-4 py-3.5 text-sm text-cream outline-none transition focus:border-gold/70"><option value="">Select your party size</option><option>2 guests · Couple</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7+ guests · Family / group</option></select></label>
+            <label class="block"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Occasion <span class="text-cream/35">(optional)</span></span><input name="occasion" maxlength="100" class="reservation-field w-full border border-white/15 bg-white/[.03] px-4 py-3.5 text-sm text-cream outline-none transition placeholder:text-cream/30 focus:border-gold/70" placeholder="Birthday, anniversary..."></label>
+            <label class="block sm:col-span-2"><span class="mb-2 block text-[11px] font-semibold text-cream/70">Dietary requests or notes <span class="text-cream/35">(optional)</span></span><textarea name="notes" rows="3" maxlength="500" class="reservation-field w-full resize-y border border-white/15 bg-white/[.03] px-4 py-3.5 text-sm text-cream outline-none transition placeholder:text-cream/30 focus:border-gold/70" placeholder="Let us know how we can make your visit special..."></textarea></label>
+          </div>
+          <p id="formError" class="mt-4 hidden text-xs text-red-300" role="alert"></p>
+          <button type="submit" class="mt-6 flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#c59a4d] to-[#e7ca8a] px-6 py-4 text-sm font-bold text-ink shadow-glow transition hover:-translate-y-0.5">Send reservation request <i class="fa-solid fa-arrow-right ml-3" aria-hidden="true"></i></button>
+          <p class="mt-4 text-center text-[10px] leading-5 text-cream/35">This form sends a request only; your table is confirmed once our team calls you.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="location" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p class="text-xs font-bold uppercase tracking-[.25em] text-gold">Find your way to us</p><h2 class="mt-4 font-display text-4xl text-cream sm:text-5xl">In the heart of Clifton</h2></div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=The+East+End%2C+Plot+CC%2C+2+Khaliq-uz-Zaman+Road%2C+Clifton%2C+Karachi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.12em] text-gold hover:text-cream">Open directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </div>
+        <div class="grid overflow-hidden border border-white/10 lg:grid-cols-[.8fr_1.2fr]">
+          <div id="contact" class="bg-panel p-7 sm:p-10">
+            <div class="space-y-7">
+              <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center border border-gold/30 text-gold"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><div><h3 class="text-xs font-bold uppercase tracking-[.14em] text-cream">Visit us</h3><p class="mt-2 text-sm leading-6 text-cream/60">Plot CC, 2 Khaliq-uz-Zaman Rd,<br>behind Eid Ghaa, Block 8 Park Clifton,<br>Karachi, Pakistan</p></div></div>
+              <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center border border-gold/30 text-gold"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><div><h3 class="text-xs font-bold uppercase tracking-[.14em] text-cream">Call us</h3><a href="tel:+923212468246" class="mt-2 inline-block text-sm text-cream/60 transition hover:text-gold">+92 321 2468246</a></div></div>
+              <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center border border-gold/30 text-gold"><i class="fa-regular fa-clock" aria-hidden="true"></i></span><div><h3 class="text-xs font-bold uppercase tracking-[.14em] text-cream">Dinner hours</h3><p class="mt-2 text-sm leading-6 text-cream/60">Opens daily at 6:30 PM<br><span class="text-[11px] text-cream/40">Please call ahead to confirm availability.</span></p></div></div>
+            </div>
+            <a href="https://wa.me/923212468246" target="_blank" rel="noopener noreferrer" class="mt-9 inline-flex items-center gap-3 border border-white/15 px-5 py-3 text-xs font-semibold text-cream transition hover:border-gold/50 hover:text-gold"><i class="fa-brands fa-whatsapp text-lg text-[#25d366]" aria-hidden="true"></i> Chat with us on WhatsApp</a>
+          </div>
+          <div class="min-h-[350px] bg-[#24241f] sm:min-h-[440px]">
+            <iframe title="Map showing The East End in Clifton, Karachi" class="h-full min-h-[350px] w-full sm:min-h-[440px]" src="https://maps.google.com/maps?q=The%20East%20End%2C%20Plot%20CC%2C%202%20Khaliq-uz-Zaman%20Road%2C%20Clifton%2C%20Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#0c0c0b]">
+    <div class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
+        <div><a href="#home" class="font-display text-2xl text-cream">The East <span class="text-gold">End</span></a><p class="mt-4 max-w-sm text-xs leading-6 text-cream/45">A gathering place for treasured recipes, thoughtful hospitality and the flavours of home.</p></div>
+        <div><h2 class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Explore</h2><div class="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-xs text-cream/55"><a class="hover:text-gold" href="#story">Our story</a><a class="hover:text-gold" href="#experience">Experience</a><a class="hover:text-gold" href="#menu">Menu</a><a class="hover:text-gold" href="#reviews">Reviews</a><a class="hover:text-gold" href="#location">Location</a><a class="hover:text-gold" href="#reservation">Reservations</a></div></div>
+        <div><h2 class="text-[10px] font-bold uppercase tracking-[.2em] text-gold">Stay connected</h2><div class="mt-4 flex gap-3"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="grid h-10 w-10 place-items-center border border-white/15 text-cream/60 transition hover:border-gold hover:text-gold"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="grid h-10 w-10 place-items-center border border-white/15 text-cream/60 transition hover:border-gold hover:text-gold"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://wa.me/923212468246" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="grid h-10 w-10 place-items-center border border-white/15 text-cream/60 transition hover:border-gold hover:text-gold"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div><p class="mt-4 text-[10px] text-cream/40">For reservations: <a class="text-cream/65 hover:text-gold" href="tel:+923212468246">+92 321 2468246</a></p></div>
+      </div>
+      <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[10px] text-cream/35 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 The East End. All rights reserved.</p>
+        <p>Website designed &amp; developed with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923212468246" target="_blank" rel="noopener noreferrer" aria-label="Chat with The East End on WhatsApp" class="whatsapp-pulse fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25d366] text-2xl text-white shadow-xl transition hover:scale-105 sm:bottom-7 sm:right-7 sm:h-16 sm:w-16"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+
+  <div id="successModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/75 p-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalMessage">
+    <div class="relative w-full max-w-md border border-gold/30 bg-panel p-8 text-center shadow-2xl sm:p-10">
+      <button id="closeModal" class="absolute right-4 top-4 grid h-9 w-9 place-items-center text-cream/50 transition hover:text-cream" aria-label="Close confirmation"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <span class="mx-auto grid h-14 w-14 place-items-center rounded-full border border-gold/40 text-xl text-gold"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+      <h2 id="modalTitle" class="mt-6 font-display text-3xl text-cream">Thank you</h2>
+      <p id="modalMessage" class="mt-4 text-sm leading-7 text-cream/65">Your table reservation request has been received. We will call you shortly to confirm.</p>
+      <button id="modalDone" class="mt-7 rounded-full bg-gold px-8 py-3 text-xs font-bold uppercase tracking-[.12em] text-ink transition hover:bg-[#e7ca8a]">Lovely, thank you</button>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      menuToggle.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+      mobileMenu.classList.toggle("hidden", isExpanded);
+      menuToggle.innerHTML = isExpanded
+        ? '<i class="fa-solid fa-bars" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      });
+    });
+
+    const filterButtons = document.querySelectorAll(".menu-filter");
+    const menuCards = document.querySelectorAll(".menu-card");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+        filterButtons.forEach((filterButton) => {
+          const selected = filterButton === button;
+          filterButton.setAttribute("aria-pressed", String(selected));
+          filterButton.classList.toggle("border-gold", selected);
+          filterButton.classList.toggle("bg-gold", selected);
+          filterButton.classList.toggle("text-ink", selected);
+          filterButton.classList.toggle("border-white/15", !selected);
+          filterButton.classList.toggle("text-cream/65", !selected);
+        });
+        menuCards.forEach((card) => {
+          card.hidden = selectedFilter !== "all" && card.dataset.category !== selectedFilter;
+        });
+      });
+    });
+
+    const reservationForm = document.getElementById("reservationForm");
+    const formError = document.getElementById("formError");
+    const successModal = document.getElementById("successModal");
+    const dateField = reservationForm.elements.date;
+    const localToday = new Date();
+    localToday.setMinutes(localToday.getMinutes() - localToday.getTimezoneOffset());
+    dateField.min = localToday.toISOString().split("T")[0];
+
+    function closeConfirmation() {
+      successModal.classList.add("hidden");
+      successModal.classList.remove("flex");
+      reservationForm.querySelector('button[type="submit"]').focus();
+    }
+
+    function cleanText(value) {
+      return value.replace(/[<>]/g, "").trim();
+    }
+
+    reservationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formError.classList.add("hidden");
+
+      const formData = new FormData(reservationForm);
+      const name = cleanText(String(formData.get("name") || ""));
+      const phone = cleanText(String(formData.get("phone") || ""));
+      const date = String(formData.get("date") || "");
+      const time = String(formData.get("time") || "");
+      const guests = String(formData.get("guests") || "");
+      const phonePattern = /^(?:\+92|0)3[0-9]{9}$/;
+
+      if (!name || !phone || !date || !time || !guests) {
+        formError.textContent = "Please complete all required fields before sending your request.";
+        formError.classList.remove("hidden");
+        return;
+      }
+      if (name.length > 80 || !phonePattern.test(phone.replace(/[\s-]/g, ""))) {
+        formError.textContent = "Please enter your name and a valid Pakistani mobile number, for example +923001234567.";
+        formError.classList.remove("hidden");
+        return;
+      }
+      if (date < dateField.min) {
+        formError.textContent = "Please choose today or a future date.";
+        formError.classList.remove("hidden");
+        dateField.focus();
+        return;
+      }
+
+      // This static demo confirms locally; no reservation details are transmitted or stored.
+      successModal.classList.remove("hidden");
+      successModal.classList.add("flex");
+      document.getElementById("closeModal").focus();
+      reservationForm.reset();
+      dateField.min = localToday.toISOString().split("T")[0];
+    });
+
+    document.getElementById("closeModal").addEventListener("click", closeConfirmation);
+    document.getElementById("modalDone").addEventListener("click", closeConfirmation);
+    successModal.addEventListener("click", (event) => {
+      if (event.target === successModal) closeConfirmation();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !successModal.classList.contains("hidden")) closeConfirmation();
+    });
+  </script>
+</body>
+</html>
